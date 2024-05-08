@@ -6,6 +6,7 @@ import Counter from "../general/Counter"
 import { useState } from "react"
 import { Rating } from "@mui/material"
 import Button from "../general/Button"
+import Comment from "./Comment"
 
 export type CardProductProps = {
   id: string
@@ -62,6 +63,13 @@ const DetailClient = ({product}: {product: any}) => {
             <div className="text-lg md:text-2xl text-orange-600">{product.price} $</div>
             <Button small text="Add to Basket" onClick={() => {}}/>
           </div>
+        </div>
+        <div>
+          {
+            product?.reviews?.map((reviews : any) =>(
+              <Comment key={reviews.id} reviews={reviews}/>
+            ))
+          }
         </div>
       </PageContainer>
     </div>
