@@ -7,7 +7,7 @@ import Button from "../general/Button";
 
 const CartClient = () => {
   
-  const {cartProducts} = useCart();
+  const {cartProducts, removeFromCart, removeCart} = useCart();
   if(!cartProducts || cartProducts.length == 0){
     return <div>No Products in Cart...</div>
   }
@@ -32,11 +32,15 @@ const CartClient = () => {
                 <div className="w-1/5">2</div>
                 <div className="w-1/5 text-orange-600 text-lg">{cart.price}</div>
                 <div className="w-1/5">
-                  <Button text="Delete Product" onClick={() => {}}/>
+                  <Button text="Delete Product" small onClick={() => removeFromCart(cart)}/>
                 </div>
               </div>
             ))
           }
+        </div>
+        <div className="flex my-5 py-5 border-t">
+          <button onClick={() => removeCart()} className="w-2/5 underline text-sm text-center">Delete Basket</button>
+          <div className="text-lg md:text-2xl text-orange-600 font-bold text-center w-3/5">1000 $</div>
         </div>
       </PageContainer>
     </div>
