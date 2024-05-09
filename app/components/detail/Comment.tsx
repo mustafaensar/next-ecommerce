@@ -6,8 +6,6 @@ import { Rating } from "@mui/material"
 
 const Comment = ({reviews}: {reviews : any}) => {
   
-  console.log(reviews)
-  
   return (
     <div className="border w-full md:w-1/3 p-2 rounded-lg my-3">
       <div className="w-[50px] flex items-center gap-1">
